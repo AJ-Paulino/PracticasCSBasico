@@ -1,4 +1,6 @@
 ﻿using Ejercicios;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Practicas
@@ -20,6 +22,69 @@ internal class Practicas
 
         //3) Desarrollar un programa que permita ingresar 10 números y luego muestre la suma de los últimos 5 números ingresados.
         //SumarUltimos5();
+
+        //Desarrollar programa que calcule la base, altura y área de un triangulo
+        //    Diseñar un algoritmo que:
+        //CalcularTriangulo2();
+    }
+
+    //Desarrollar programa que calcule la base, altura y área de un triangulo
+    //    Diseñar un algoritmo que:
+
+    //Solicite al usuario ingresar un número entero "n" que represente la cantidad de triángulos a procesar.
+    //Para cada triángulo, capture los valores de la base y la altura.
+    //Calcule el área de cada triángulo utilizando la fórmula correspondiente.
+    //Muestre en pantalla los datos de cada triángulo (base, altura y área).
+    //Determine y reporte la cantidad de triángulos con un área superior a 12 unidades cuadradas.
+
+    public static void CalcularTriangulo2()
+    {
+        string n = string.Empty;
+        double Base = 0;
+        double altura = 0;
+        double area = 0;
+        const int areaLimite = 12;
+        int trianguloLimiteExcedido = 0;
+        int cantidad = 0;
+
+        try
+        {
+            Console.Write("\nIngrese el número de triángilos que dese calcular: ");
+            n = Console.ReadLine();
+
+            if (int.TryParse(n, out cantidad))
+            {
+                for (int i = 0; i < cantidad; i++)
+                {
+                    Console.Write("\nIngrese la medida de la base del triángulo: ");
+                    Base = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Ingrese la medida de la altura del triángulo: ");
+                    altura = Convert.ToDouble(Console.ReadLine());
+
+                    area = (Base * altura) / 2;
+
+                    Console.WriteLine($"El área del triágulo es: {area}");
+
+                    if (area > areaLimite)
+                    {
+                        trianguloLimiteExcedido++;
+                    }
+                }
+
+               Console.WriteLine($"\nLa cantidad de triángulos que superan el área de ({areaLimite}) " +
+                   $"es: {trianguloLimiteExcedido}");
+
+            }
+            else
+            {
+                Console.WriteLine("\nLa cantidad debe ser un número.");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"\nError al calcular los datos ingresados. {e.Message}");
+        }
     }
 
     //programación bucles for
