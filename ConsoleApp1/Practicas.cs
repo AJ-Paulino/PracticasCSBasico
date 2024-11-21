@@ -26,7 +26,122 @@ internal class Practicas
         //Desarrollar programa que calcule la base, altura y área de un triangulo
         //    Diseñar un algoritmo que:
         //CalcularTriangulo2();
+
+        //programación bucles while
+
+        //Implementa una aplicación que solicite diez calificaciones numéricas
+        //y calcule la cantidad de estudiantes que alcanzaron una calificación mínima de 7
+        //y la cantidad que quedó por debajo de este límite.
+        //CalcularNota();
+
+        //Escribe un algoritmo que, para una empresa con 'n' empleados y un rango salarial de $100 a $500,
+        //cuente cuántos empleados se encuentran en cada uno de los siguientes grupos: $100-$300 y mayor a $300.
+        //Asimismo, calcula el gasto total en nómina.
+        CalcularNomina();
     }
+
+    //programación bucles while
+
+    //Implementa una aplicación que solicite diez calificaciones numéricas
+    //y calcule la cantidad de estudiantes que alcanzaron una calificación mínima de 7
+    //y la cantidad que quedó por debajo de este límite.
+    public static void CalcularNota()
+    {
+        int calificacion = 0;
+        const int calificaciones = 10;
+        int entrada = 1;
+        int calificacionMas7 = 0;
+        int calificacionMenos7 = 0;
+        int calificacionMinima = 7;
+
+        try
+        {
+            Console.WriteLine("\n Ingrese 10 calificaciones:");
+
+            while (entrada <= calificaciones)
+            {
+                Console.Write($"\n Ingrese la calificación {entrada}: ");
+                calificacion = Convert.ToInt32(Console.ReadLine());
+
+                if (calificacion >= calificacionMinima)
+                {
+                    calificacionMas7++;
+                }
+                if (calificacion < calificacionMinima)
+                {
+                    calificacionMenos7++;
+                }
+
+                entrada++;
+            }
+
+            Console.WriteLine($"\n {calificacionMas7} estudiantes obtuvieron una calificación mínima de {calificacionMinima}." +
+                $"\n {calificacionMenos7} estudiantes obtuvieron una calificación menor a {calificacionMinima}.");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"\nError al leer los datos ingresados. {e.Message}");
+            return;
+        }
+    }
+
+    //Escribe un algoritmo que, para una empresa con 'n' empleados y un rango salarial de $100 a $500,
+    //cuente cuántos empleados se encuentran en cada uno de los siguientes grupos: $100-$300 y mayor a $300.
+    //Asimismo, calcula el gasto total en nómina.
+    private static void CalcularNomina()
+    {
+        int n = 0;
+        int empleados = 1;
+        int sueldo = 0;
+        const int salarioMinimo = 100;
+        const int salarioMedio = 300;
+        const int salarioMaximo = 500;
+        int grupo100y300 = 0;
+        int grupoMas300 = 0;
+        int gastoNomina = 0;
+
+        try
+        {
+            Console.Write("\n Indique el número de empleados que tiene la empresa: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            while(n >= empleados)
+            {
+                Console.Write($"\n Ingrese el salario del empleado #{empleados}: ");
+                sueldo = int.Parse(Console.ReadLine());
+
+                if (sueldo < salarioMinimo || sueldo > salarioMaximo)
+                {
+                    Console.WriteLine($"\n El sueldo de los empleados de esta empresa debe estar entre {salarioMinimo} y " +
+                        $"{salarioMaximo}.");
+                }
+
+                if(sueldo >= salarioMinimo && sueldo <= salarioMedio)
+                {
+                    grupo100y300++;
+                }
+
+                if(sueldo > salarioMedio && sueldo <= salarioMaximo)
+                {
+                    grupoMas300++;
+                }
+
+                gastoNomina += sueldo;
+                empleados++;
+            }
+
+            Console.WriteLine($"\n La cantidad de empleados con un rango salarial de entre 100 y 300 es: {grupo100y300}" +
+                $"\n La cantidad de empleados con un rango salarial que supera los 300 es: {grupoMas300}" +
+                $"\n El gasto total en nómina es: {gastoNomina}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"\n Error al leer los datos ingresados. {e.Message}");
+            return;
+        }
+    }
+
+
 
     //Desarrollar programa que calcule la base, altura y área de un triangulo
     //    Diseñar un algoritmo que:
@@ -36,7 +151,6 @@ internal class Practicas
     //Calcule el área de cada triángulo utilizando la fórmula correspondiente.
     //Muestre en pantalla los datos de cada triángulo (base, altura y área).
     //Determine y reporte la cantidad de triángulos con un área superior a 12 unidades cuadradas.
-
     public static void CalcularTriangulo2()
     {
         string n = string.Empty;
