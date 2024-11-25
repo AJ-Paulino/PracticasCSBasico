@@ -37,7 +37,39 @@ internal class Practicas
         //Escribe un algoritmo que, para una empresa con 'n' empleados y un rango salarial de $100 a $500,
         //cuente cuántos empleados se encuentran en cada uno de los siguientes grupos: $100-$300 y mayor a $300.
         //Asimismo, calcula el gasto total en nómina.
-        CalcularNomina();
+        //CalcularNomina();
+
+        //-----------------------------------------------------------------------------------------------------------
+
+        //Prácticas de Arrays
+
+        //Ejemplos del capítulo 8
+        ArreglosEjemplos arreglosEjemplos = new ArreglosEjemplos();
+
+        //Figura 8.2 Iniciar arreglo
+        //arreglosEjemplos.Ejercicio1();
+
+        //Figura 8.3
+        //arreglosEjemplos.Ejercicio2();
+
+        //Figura 8.4
+        //arreglosEjemplos.Ejercicio3();
+
+        //Figura 8.5 Sumar arreglo
+        //arreglosEjemplos.Ejercicio3();
+
+        //Figura 8.6 Gráfico barras
+        //arreglosEjemplos.Ejercicio5();
+
+        //Figura 8.7 Tirar dado
+        //arreglosEjemplos.Ejercicio6();
+
+        //Figura 8.8 Encuesta Estudiantil
+        //arreglosEjemplos.Ejercicio7();
+
+        //Figura 8.9 Carta
+        Ejercicio8 ejercicio8 = new Ejercicio8();
+        ejercicio8.Carta();
     }
 
     //programación bucles while
@@ -105,7 +137,7 @@ internal class Practicas
             Console.Write("\n Indique el número de empleados que tiene la empresa: ");
             n = Convert.ToInt32(Console.ReadLine());
 
-            while(n >= empleados)
+            while (n >= empleados)
             {
                 Console.Write($"\n Ingrese el salario del empleado #{empleados}: ");
                 sueldo = int.Parse(Console.ReadLine());
@@ -116,12 +148,12 @@ internal class Practicas
                         $"{salarioMaximo}.");
                 }
 
-                if(sueldo >= salarioMinimo && sueldo <= salarioMedio)
+                if (sueldo >= salarioMinimo && sueldo <= salarioMedio)
                 {
                     grupo100y300++;
                 }
 
-                if(sueldo > salarioMedio && sueldo <= salarioMaximo)
+                if (sueldo > salarioMedio && sueldo <= salarioMaximo)
                 {
                     grupoMas300++;
                 }
@@ -186,8 +218,8 @@ internal class Practicas
                     }
                 }
 
-               Console.WriteLine($"\nLa cantidad de triángulos que superan el área de ({areaLimite}) " +
-                   $"es: {trianguloLimiteExcedido}");
+                Console.WriteLine($"\nLa cantidad de triángulos que superan el área de ({areaLimite}) " +
+                    $"es: {trianguloLimiteExcedido}");
 
             }
             else
@@ -214,7 +246,7 @@ internal class Practicas
         const int areaLimite = 25;
         int trianguloLimiteExcedido = 0;
         int cantidad = 0;
-                
+
         try
         {
             Console.Write("\nIngrese el número de triángilos que dese calcular: ");
@@ -255,7 +287,7 @@ internal class Practicas
         }
     }
 
-//2) Crear un programa que cuente cuántos números, de un conjunto de 10, son divisibles por 3 o por 5.
+    //2) Crear un programa que cuente cuántos números, de un conjunto de 10, son divisibles por 3 o por 5.
     public static void CalcularNumerosDivisibles()
     {
         const int cantidad = 10;
@@ -266,17 +298,17 @@ internal class Practicas
         try
         {
             Console.WriteLine("\nIngrese 10 números: ");
-            for( int i = 1;i <= cantidad;i++)
+            for (int i = 1; i <= cantidad; i++)
             {
                 Console.Write($"\nIngrese el número {i}: ");
                 nums = Convert.ToInt32(Console.ReadLine());
 
-                if (nums%3 == 0)
+                if (nums % 3 == 0)
                 {
                     d3++;
                 }
 
-                if (nums%5 == 0)
+                if (nums % 5 == 0)
                 {
                     d5++;
                 }
@@ -291,7 +323,7 @@ internal class Practicas
         }
     }
 
-//3) Desarrollar un programa que permita ingresar 10 números y luego muestre la suma de los últimos 5 números ingresados.
+    //3) Desarrollar un programa que permita ingresar 10 números y luego muestre la suma de los últimos 5 números ingresados.
     public static void SumarUltimos5()
     {
         int nums = 0;
@@ -301,12 +333,12 @@ internal class Practicas
         try
         {
             Console.WriteLine("\nIngrese 10 números: ");
-            for ( int i = 1; i <= numeros;i++)
+            for (int i = 1; i <= numeros; i++)
             {
                 Console.Write($"\nIngrese el número {i}: ");
                 nums = Convert.ToInt32(Console.ReadLine());
 
-                if (i+4 >= numeros)
+                if (i + 4 >= numeros)
                 {
                     contadorSuma += nums;
                 }
@@ -365,7 +397,7 @@ internal class Practicas
                 Console.WriteLine("\nEl formato de la cantidad de notas es inválido.");
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine($"\nError calculando las notas. {ex.Message}");
         }
@@ -451,7 +483,7 @@ internal class Practicas
     //1) Diseñar un programa que solicite al usuario dos números y, si el primer número es más grande, 
     // calcule y muestre su suma y resta. De lo contrario, calculará y mostrará su producto y cociente.
     static void Tarea3A()
-    {  
+    {
         double num1 = 0;
         double num2 = 0;
         double suma = 0;
@@ -486,8 +518,8 @@ internal class Practicas
         int nota1 = 0;
         int nota2 = 0;
         int nota3 = 0;
-        int promedio = 0;            
-         
+        int promedio = 0;
+
         Console.WriteLine("\nIngrese sus calificaciones:\n");
 
         Console.Write("\nIngrese la nota 1: ");
@@ -498,7 +530,7 @@ internal class Practicas
 
         Console.Write("\nIngrese la nota 3: ");
         nota3 = Convert.ToInt32(Console.ReadLine());
-        
+
         if (nota1 > 10 || nota1 < 0 || nota2 > 10 || nota2 < 0 || nota3 > 10 || nota3 < 0)
         {
             Console.WriteLine("\nLa nota debe estar entre 0 y 10 puntos");
@@ -521,7 +553,7 @@ internal class Practicas
             if (promedio < 4 && promedio >= 0)
             {
                 Console.WriteLine("\nReprobado");
-            }            
+            }
         }
     }
 
