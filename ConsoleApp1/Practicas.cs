@@ -56,7 +56,7 @@ internal class Practicas
         //arreglosEjemplos.Ejercicio3();
 
         //Figura 8.5 Sumar arreglo
-        //arreglosEjemplos.Ejercicio3();
+        //arreglosEjemplos.Ejercicio4();
 
         //Figura 8.6 Gráfico barras
         //arreglosEjemplos.Ejercicio5();
@@ -67,9 +67,8 @@ internal class Practicas
         //Figura 8.8 Encuesta Estudiantil
         //arreglosEjemplos.Ejercicio7();
 
-        //Figura 8.9 Carta
-        Ejercicio8 ejercicio8 = new Ejercicio8();
-        ejercicio8.Carta();
+        //Figura 8.12 Prueba Foreach
+        //arreglosEjemplos.Ejercicio9();
     }
 
     //programación bucles while
