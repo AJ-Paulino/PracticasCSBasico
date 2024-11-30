@@ -1,6 +1,7 @@
 ﻿using Ejercicios;
 using System;
 using System.Diagnostics;
+using System.Runtime.ConstrainedExecution;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -80,7 +81,73 @@ internal class Practicas
         //        Programa array 2
         //Escriba un programa que lea dos matrices desde la consola y verifique si son iguales(dos matrices son iguales cuando tienen la misma longitud
         //y todos sus elementos, que tienen el mismo índice, son iguales).
-        MatricesIguales();
+        //MatricesIguales();
+
+        //Programa array 3
+        //Crear un programa que solicite al usuario "N" números, almacenarlos en una estructura de datos lineal
+        //y determinar lo siguiente:
+
+        //El menor valor.
+        //Indicar si algún valor se repite al menos una vez.
+        Array3();
+    }
+
+    //Programa array 3
+    //Crear un programa que solicite al usuario "N" números, almacenarlos en una estructura de datos lineal
+    //y determinar lo siguiente:
+
+    //El menor valor.
+    //Indicar si algún valor se repite al menos una vez.
+    public static void Array3()
+    {
+        Console.Write("Indique la cantidad de números a ingresar: ");
+        int N = int.Parse(Console.ReadLine());
+
+        int[] numeros = new int[N];
+
+        Console.WriteLine("Ingrese los números:");
+        for (int i = 0; i < N; i++)
+        {
+            numeros[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Determinar el menor valor
+        int menorValor = numeros[0];
+        for (int i = 1; i < N; i++)
+        {
+            if (numeros[i] < menorValor)
+            {
+                menorValor = numeros[i];
+            }
+        }
+        Console.WriteLine($"El menor valor es: {menorValor}");
+
+        // Verificar si algún valor se repite
+        bool hayRepetidos = false;
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = i + 1; j < N; j++)
+            {
+                if (numeros[i] == numeros[j])
+                {
+                    hayRepetidos = true;
+                    break;
+                }
+            }
+            if (hayRepetidos)
+            {
+                break;
+            }
+        }
+
+        if (hayRepetidos)
+        {
+            Console.WriteLine("Hay al menos un valor que se repite.");
+        }
+        else
+        {
+            Console.WriteLine("No hay valores repetidos.");
+        }
     }
 
     //        Programa array 2
@@ -146,12 +213,12 @@ internal class Practicas
         int multiplicador = 5;
 
         //Encabezados
-        Console.WriteLine("{0}{1,8}","Indice", "Valor");
+        Console.WriteLine("{0}{1,8}", "Indice", "Valor");
 
         //Calcular el valor para el elemento del arreglo
         for (int contador = 0; contador < matriz.Length; contador++)
         {
-            matriz[contador] = contador*multiplicador;
+            matriz[contador] = contador * multiplicador;
         }
 
         //Imprime en pantalla el valor para cada elemento del arreglo
