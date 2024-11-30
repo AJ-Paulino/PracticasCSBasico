@@ -75,7 +75,65 @@ internal class Practicas
         //    Programa array 1
         //Escribe un programa que cree una matriz de 20 elementos de tipo entero e inicialice cada uno de los elementos con un
         //valor igual al índice del elemento multiplicado por 5. Imprime los elementos en la consola.
-        Matriz20();
+        //Matriz20();
+
+        //        Programa array 2
+        //Escriba un programa que lea dos matrices desde la consola y verifique si son iguales(dos matrices son iguales cuando tienen la misma longitud
+        //y todos sus elementos, que tienen el mismo índice, son iguales).
+        MatricesIguales();
+    }
+
+    //        Programa array 2
+    //Escriba un programa que lea dos matrices desde la consola y verifique si son iguales(dos matrices son iguales
+    //cuando tienen la misma longitud y todos sus elementos, que tienen el mismo índice, son iguales).
+    public static void MatricesIguales()
+    {
+        Console.Write("Ingrese el número de filas: ");
+        int filas = int.Parse(Console.ReadLine());
+        Console.Write("Ingrese el número de columnas: ");
+        int columnas = int.Parse(Console.ReadLine());
+
+        int[,] matriz1 = LeerMatriz(filas, columnas, "Matriz 1");
+        int[,] matriz2 = LeerMatriz(filas, columnas, "Matriz 2");
+
+        if (SonIguales(matriz1, matriz2))
+        {
+            Console.WriteLine("Las matrices son iguales.");
+        }
+        else
+        {
+            Console.WriteLine("Las matrices no son iguales.");
+        }
+
+        static int[,] LeerMatriz(int filas, int columnas, string nombre)
+        {
+            int[,] matriz = new int[filas, columnas];
+            Console.WriteLine($"Ingrese los elementos de {nombre}:");
+            for (int i = 0; i < filas; i++)
+            {
+                string[] elementos = Console.ReadLine().Split(' ');
+                for (int j = 0; j < columnas; j++)
+                {
+                    matriz[i, j] = int.Parse(elementos[j]);
+                }
+            }
+            return matriz;
+        }
+
+        static bool SonIguales(int[,] matriz1, int[,] matriz2)
+        {
+            for (int i = 0; i < matriz1.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz1.GetLength(1); j++)
+                {
+                    if (matriz1[i, j] != matriz2[i, j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 
     //    Programa array 1
