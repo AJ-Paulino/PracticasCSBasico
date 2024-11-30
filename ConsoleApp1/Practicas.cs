@@ -1,13 +1,15 @@
 ﻿using Ejercicios;
+using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Practicas
 {
     private static void Main(string[] args)
     {
-        //Ejercicios2 ejercicios2 = new Ejercicios2();
+        Ejercicios2 ejercicios2 = new Ejercicios2();
         //ejercicios2.ProcesarPiezas();
 
 
@@ -69,6 +71,36 @@ internal class Practicas
 
         //Figura 8.12 Prueba Foreach
         //arreglosEjemplos.Ejercicio9();
+
+        //    Programa array 1
+        //Escribe un programa que cree una matriz de 20 elementos de tipo entero e inicialice cada uno de los elementos con un
+        //valor igual al índice del elemento multiplicado por 5. Imprime los elementos en la consola.
+        Matriz20();
+    }
+
+    //    Programa array 1
+    //Escribe un programa que cree una matriz de 20 elementos de tipo entero e inicialice cada uno de los elementos con un
+    //valor igual al índice del elemento multiplicado por 5. Imprime los elementos en la consola.
+    public static void Matriz20()
+    {
+        int[] matriz;
+        matriz = new int[20];
+        int multiplicador = 5;
+
+        //Encabezados
+        Console.WriteLine("{0}{1,8}","Indice", "Valor");
+
+        //Calcular el valor para el elemento del arreglo
+        for (int contador = 0; contador < matriz.Length; contador++)
+        {
+            matriz[contador] = contador*multiplicador;
+        }
+
+        //Imprime en pantalla el valor para cada elemento del arreglo
+        for (int contador = 0; contador < matriz.Length; contador++)
+        {
+            Console.WriteLine("{0,5}{1,8}", contador, matriz[contador]);
+        }
     }
 
     //programación bucles while
