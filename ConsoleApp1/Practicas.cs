@@ -89,7 +89,96 @@ internal class Practicas
 
         //El menor valor.
         //Indicar si algún valor se repite al menos una vez.
-        Array3();
+        //Array3();
+
+        //---------------------------------------------------------------------------------------------
+
+        //Ejemplos del capítulo 4:
+
+        //LibroCalificaciones libroCalificaciones = new LibroCalificaciones();
+        //libroCalificaciones.MostrarMensaje();
+
+        // crea un objeto LibroCalificaciones y lo asigna a miLibroCalificaciones
+        //LibroCalificaciones miLibroCalificaciones = new LibroCalificaciones();
+
+        //// pide el nombre del curso y lo recibe como entrada
+        //Console.WriteLine("Por favor escriba el nombre del curso:");
+        //string nombreDelCurso = Console.ReadLine(); // lee una línea de texto
+        //Console.WriteLine(); // imprime en pantalla una línea en blanco
+
+        //// llama al método MostrarMensaje de miLibroCalificaciones 
+        //// y pasa nombreDelCurso como argumento
+        //miLibroCalificaciones.MostrarMensaje(nombreDelCurso);
+
+        // Fig. 4.8: PruebaLibroCalificaciones.cs
+        // Creación y manipulación de un objeto LibroCalificaciones.
+        // crea un objeto LibroCalificaciones y lo asigna a miLibroCalificaciones
+        //LibroCalificaciones miLibroCalificaciones = new LibroCalificaciones();
+
+        //// muestra el valor inicial de NombreCurso
+        //Console.WriteLine("El nombre inicial del curso es: '{0}'\n",
+        //miLibroCalificaciones.NombreCurso);
+
+        //// pide y lee el nombre del curso
+        //Console.WriteLine("Por favor escriba el nombre del curso:");
+        //string elNombre = Console.ReadLine(); // lee una línea de texto
+        //miLibroCalificaciones.NombreCurso = elNombre; // establece el nombre usando una propiedad
+        //Console.WriteLine(); // imprime en pantalla una línea en blanco
+
+        //// muestra el mensaje de bienvenida después de especificar el nombre del curso
+        //miLibroCalificaciones.MostrarMensaje();
+
+        //// Fig. 4.13: PruebaLibroCalificaciones.cs
+        //// El constructor LibroCalificaciones se utiliza para especificar el nombre del 
+        //// curso cada vez que se crea un objeto LibroCalificaciones.
+        //// crea el objeto LibroCalificaciones
+        //LibroCalificaciones libroCalificaciones1 = new LibroCalificaciones( // invoca al constructor
+        //"CS101 Introducción a la programación en C#");
+        //LibroCalificaciones libroCalificaciones2 = new LibroCalificaciones( // invoca al constructor
+        // "CS102 Estructuras de datos en C#");
+
+        //// muestra el valor inicial de nombreCurso para cada LibroCalificaciones
+        //Console.WriteLine("El nombre del curso de libroCalificaciones1 es: {0}",
+        //libroCalificaciones1.NombreCurso);
+        //Console.WriteLine("El nombre del curso de libroCalificaciones2 es: {0}",
+        //libroCalificaciones2.NombreCurso);
+
+        // Fig. 4.16: PruebaCuenta.cs
+        // Creación y manipulación de un objeto Cuenta.
+        Cuenta cuenta1 = new Cuenta(50.00M); // crea el objeto Cuenta
+        Cuenta cuenta2 = new Cuenta(-7.53M); // crea el objeto Cuenta
+
+        // muestra el saldo inicial de cada objeto usando una propiedad
+        Console.WriteLine("Saldo de cuenta1: {0:C}",
+        cuenta1.Saldo); // muestra la propiedad Saldo
+        Console.WriteLine("Saldo de cuenta2: {0:C}\n",
+        cuenta2.Saldo); // muestra la propiedad Saldo
+
+        decimal montoDeposito; // deposita la cantidad que se leyó del usuario
+
+        // pide y obtiene la entrada del usuario
+        Console.Write("Escriba el monto a depositar para la cuenta1: ");
+        montoDeposito = Convert.ToDecimal(Console.ReadLine());
+        Console.WriteLine("se sumó {0:C} al saldo de cuenta1\n",
+        montoDeposito);
+        cuenta1.Acredita(montoDeposito); // se suma al saldo de cuenta1
+
+        // muestra los saldos
+        Console.WriteLine("Saldo de cuenta1: {0:C}",
+        cuenta1.Saldo);
+        Console.WriteLine("Saldo de cuenta2: {0:C}\n",
+        cuenta2.Saldo);
+
+        // pide y obtiene la entrada del usuario
+        Console.Write("Escriba la cantidad a depositar para la cuenta2: ");
+        montoDeposito = Convert.ToDecimal(Console.ReadLine());
+        Console.WriteLine("se sumó {0:C} al saldo de cuenta2\n",
+        montoDeposito);
+        cuenta2.Acredita(montoDeposito); // se suma al saldo de cuenta2
+
+        // muestra los saldos
+        Console.WriteLine("Saldo de cuenta1: {0:C}", cuenta1.Saldo);
+        Console.WriteLine("Saldo de cuenta2: {0:C}", cuenta2.Saldo);
     }
 
     //Programa array 3
