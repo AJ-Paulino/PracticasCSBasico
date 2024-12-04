@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Runtime.ConstrainedExecution;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using static Ejercicios.EjerciciosClasesYObjetos;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Practicas
@@ -145,40 +146,51 @@ internal class Practicas
 
         // Fig. 4.16: PruebaCuenta.cs
         // Creación y manipulación de un objeto Cuenta.
-        Cuenta cuenta1 = new Cuenta(50.00M); // crea el objeto Cuenta
-        Cuenta cuenta2 = new Cuenta(-7.53M); // crea el objeto Cuenta
+        //Cuenta cuenta1 = new Cuenta(50.00M); // crea el objeto Cuenta
+        //Cuenta cuenta2 = new Cuenta(-7.53M); // crea el objeto Cuenta
 
-        // muestra el saldo inicial de cada objeto usando una propiedad
-        Console.WriteLine("Saldo de cuenta1: {0:C}",
-        cuenta1.Saldo); // muestra la propiedad Saldo
-        Console.WriteLine("Saldo de cuenta2: {0:C}\n",
-        cuenta2.Saldo); // muestra la propiedad Saldo
+        //// muestra el saldo inicial de cada objeto usando una propiedad
+        //Console.WriteLine("Saldo de cuenta1: {0:C}",
+        //cuenta1.Saldo); // muestra la propiedad Saldo
+        //Console.WriteLine("Saldo de cuenta2: {0:C}\n",
+        //cuenta2.Saldo); // muestra la propiedad Saldo
 
-        decimal montoDeposito; // deposita la cantidad que se leyó del usuario
+        //decimal montoDeposito; // deposita la cantidad que se leyó del usuario
 
-        // pide y obtiene la entrada del usuario
-        Console.Write("Escriba el monto a depositar para la cuenta1: ");
-        montoDeposito = Convert.ToDecimal(Console.ReadLine());
-        Console.WriteLine("se sumó {0:C} al saldo de cuenta1\n",
-        montoDeposito);
-        cuenta1.Acredita(montoDeposito); // se suma al saldo de cuenta1
+        //// pide y obtiene la entrada del usuario
+        //Console.Write("Escriba el monto a depositar para la cuenta1: ");
+        //montoDeposito = Convert.ToDecimal(Console.ReadLine());
+        //Console.WriteLine("se sumó {0:C} al saldo de cuenta1\n",
+        //montoDeposito);
+        //cuenta1.Acredita(montoDeposito); // se suma al saldo de cuenta1
 
-        // muestra los saldos
-        Console.WriteLine("Saldo de cuenta1: {0:C}",
-        cuenta1.Saldo);
-        Console.WriteLine("Saldo de cuenta2: {0:C}\n",
-        cuenta2.Saldo);
+        //// muestra los saldos
+        //Console.WriteLine("Saldo de cuenta1: {0:C}",
+        //cuenta1.Saldo);
+        //Console.WriteLine("Saldo de cuenta2: {0:C}\n",
+        //cuenta2.Saldo);
 
-        // pide y obtiene la entrada del usuario
-        Console.Write("Escriba la cantidad a depositar para la cuenta2: ");
-        montoDeposito = Convert.ToDecimal(Console.ReadLine());
-        Console.WriteLine("se sumó {0:C} al saldo de cuenta2\n",
-        montoDeposito);
-        cuenta2.Acredita(montoDeposito); // se suma al saldo de cuenta2
+        //// pide y obtiene la entrada del usuario
+        //Console.Write("Escriba la cantidad a depositar para la cuenta2: ");
+        //montoDeposito = Convert.ToDecimal(Console.ReadLine());
+        //Console.WriteLine("se sumó {0:C} al saldo de cuenta2\n",
+        //montoDeposito);
+        //cuenta2.Acredita(montoDeposito); // se suma al saldo de cuenta2
 
-        // muestra los saldos
-        Console.WriteLine("Saldo de cuenta1: {0:C}", cuenta1.Saldo);
-        Console.WriteLine("Saldo de cuenta2: {0:C}", cuenta2.Saldo);
+        //// muestra los saldos
+        //Console.WriteLine("Saldo de cuenta1: {0:C}", cuenta1.Saldo);
+        //Console.WriteLine("Saldo de cuenta2: {0:C}", cuenta2.Saldo);
+
+        //---------------------------------------------------------------------------------------------
+        //Ejercicios Clases y objetos
+
+        //Ejercicio 1
+        //Desarrollar una clase que represente un punto en el plano y tenga los siguientes métodos:
+        //cargar los valores de x e y, imprimir en que cuadrante se encuentra dicho punto
+        //(concepto matemático, primer cuadrante si x e y son positivas, si x< 0 e y> 0 segundo cuadrante, etc.
+        Puntos puntos = new Puntos();
+        puntos.CargarValoresXY();
+        puntos.ImprimirCuadrante();
     }
 
     //Programa array 3
