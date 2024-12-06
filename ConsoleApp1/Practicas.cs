@@ -188,9 +188,21 @@ internal class Practicas
         //Desarrollar una clase que represente un punto en el plano y tenga los siguientes métodos:
         //cargar los valores de x e y, imprimir en que cuadrante se encuentra dicho punto
         //(concepto matemático, primer cuadrante si x e y son positivas, si x< 0 e y> 0 segundo cuadrante, etc.
-        Puntos puntos = new Puntos();
-        puntos.CargarValoresXY();
-        puntos.ImprimirCuadrante();
+
+        //Puntos puntos = new Puntos();
+        //puntos.CargarValoresXY();
+        //puntos.ImprimirCuadrante();
+
+        //Ejercicio 2
+        //Crea una clase Libro con las propiedades Titulo, Autor y Paginas.
+
+        //Implementa un método MostrarInformacion que imprima la información del libro.
+        //Implementa un método EsLargo que devuelva true si el libro tiene más de 500 páginas, o false en caso contrario.        
+
+        Libro libro = new Libro();
+        libro.AlmacenarInformacion();
+        libro.MostrarInformacion();
+        Console.WriteLine("\n¿El libro tiene más de 500 páginas? " + libro.EsLargo());
     }
 
     //Programa array 3
