@@ -1,4 +1,5 @@
 ﻿using Ejercicios;
+using Microsoft.VisualBasic;
 using System;
 using System.Diagnostics;
 using System.Runtime.ConstrainedExecution;
@@ -199,10 +200,21 @@ internal class Practicas
         //Implementa un método MostrarInformacion que imprima la información del libro.
         //Implementa un método EsLargo que devuelva true si el libro tiene más de 500 páginas, o false en caso contrario.        
 
-        Libro libro = new Libro();
-        libro.AlmacenarInformacion();
-        libro.MostrarInformacion();
-        Console.WriteLine("\n¿El libro tiene más de 500 páginas? " + libro.EsLargo());
+        //Libro libro = new Libro();
+        //libro.AlmacenarInformacion();
+        //libro.MostrarInformacion();
+        //Console.WriteLine("\n¿El libro tiene más de 500 páginas? " + libro.EsLargo());
+
+        //Ejercicio 3
+        //Crea una clase Alumno con las propiedades Nombre, Matricula, Carrera y Calificaciones(una lista de enteros).
+
+        //Implementa un método CalcularPromedio que devuelva el promedio de las calificaciones.
+        //Implementa un método MostrarInformacion que imprima el nombre, la matrícula, la carrera y el promedio del alumno
+        //Crea instancias de la clase Alumno, asigna valores a las propiedades y muestra la información.
+
+        Alumno alumno = new Alumno();
+        alumno.AlmacenarInformacion();
+        alumno.MostrarInformacion();
     }
 
     //Programa array 3
